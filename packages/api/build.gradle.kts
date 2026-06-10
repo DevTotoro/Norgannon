@@ -1,4 +1,5 @@
 plugins {
+    id("dev.nx.gradle.project-graph") version "0.1.20"
     kotlin("jvm") version "2.2.21"
     kotlin("plugin.spring") version "2.2.21"
     id("org.springframework.boot") version "4.0.6"
@@ -57,4 +58,10 @@ allOpen {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+allprojects {
+    apply {
+        plugin("dev.nx.gradle.project-graph")
+    }
 }
