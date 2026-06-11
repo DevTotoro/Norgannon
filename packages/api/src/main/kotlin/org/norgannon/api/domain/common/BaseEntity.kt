@@ -5,22 +5,32 @@ import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
 abstract class BaseEntity {
     @Id
     @Column(name = "id", updatable = false, nullable = false)
-    val id: Long = TSID.fast().toLong()
+    var id: Long = 0L
+        protected set
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false, updatable = false)
-    var createdAt: LocalDateTime = LocalDateTime.now()
+    @Column(name = "created_at", nullable = false, updatable = false, columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    lateinit var createdAt: OffsetDateTime
+        protected set
 
     @LastModifiedDate
-    @Column(name = "updated_at", nullable = false)
-    var updatedAt: LocalDateTime = LocalDateTime.now()
+    @Column(name = "updated_at", nullable = false, columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    lateinit var updatedAt: OffsetDateTime
+        protected set
+
+    @PrePersist
+    fun assignTSID() {
+        if (id == 0L) {
+            id = TSID.fast().toLong()
+        }
+    }
 
     fun getPublicId(): String = TSID.from(id).toString()
 
