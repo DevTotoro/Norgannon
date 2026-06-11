@@ -5,6 +5,7 @@ springDependencyManagement = "1.1.7"
 ktlint = "14.2.0"
 nxProjectGraph = "0.1.20"
 tsidCreator = "2.1.4"
+testcontainers = "1.20.4"
 
 [plugins]
 nx-projectGraph = { id = "dev.nx.gradle.project-graph", version.ref = "nxProjectGraph" }
@@ -36,3 +37,6 @@ tsid-creator = { module = "io.hypersistence:hypersistence-tsid", version.ref = "
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql" }

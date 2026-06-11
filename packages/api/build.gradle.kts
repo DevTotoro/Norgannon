@@ -45,6 +45,11 @@ dependencies {
     testImplementation(libs.spring.boot.starter.test)
     testImplementation(libs.kotlin.test.junit5)
     testRuntimeOnly(libs.junit.platform.launcher)
+
+    // Testcontainers Infrastructure
+    testImplementation(platform(libs.testcontainers.bom))
+    testImplementation(libs.spring.boot.testcontainers)
+    testImplementation(libs.testcontainers.postgresql)
 }
 
 kotlin {
@@ -61,6 +66,8 @@ allOpen {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+
+    jvmArgs("-XX:+EnableDynamicAgentLoading", "--enable-native-access=ALL-UNNAMED")
 }
 
 allprojects {
