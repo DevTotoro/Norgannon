@@ -65,6 +65,10 @@ tasks.withType<Test> {
 
 allprojects {
     apply {
-        plugin(libs.plugins.nx.projectGraph.get().pluginId)
+        plugin(
+            libs.plugins.nx.projectGraph
+                .get()
+                .pluginId,
+        )
     }
 }
