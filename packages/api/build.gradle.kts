@@ -29,6 +29,7 @@ dependencies {
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("tools.jackson.module:jackson-module-kotlin")
+    implementation("io.hypersistence:hypersistence-tsid:2.1.4")
 
     runtimeOnly("org.postgresql:postgresql")
 
