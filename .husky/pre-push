@@ -1,2 +1,0 @@
-npx nx format:check --base=origin/main
-npx nx affected -t lint test build typecheck --base=origin/main

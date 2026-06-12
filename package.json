@@ -6,6 +6,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@nx/gradle": "^22.7.5",
     "@nx/js": "22.7.5",
     "@swc-node/register": "1.11.1",
     "@swc/core": "1.15.8",
@@ -14,6 +15,7 @@
     "lint-staged": "^17.0.7",
     "nx": "22.7.5",
     "prettier": "^3.8.1",
+    "prettier-plugin-sql": "^0.20.0",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2"
   },
@@ -23,6 +25,9 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md,css,scss,html,yml,yaml}": [
       "prettier --write"
+    ],
+    "*.{kt,kts}": [
+      "nx format api"
     ]
   }
 }
