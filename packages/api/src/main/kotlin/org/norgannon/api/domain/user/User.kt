@@ -1,7 +1,7 @@
 package com.github.devtotoro.thevideoclub.api.domain.user
 
-import jakarta.persistence.*
 import com.github.devtotoro.thevideoclub.api.domain.common.BaseEntity
+import jakarta.persistence.*
 
 @Entity
 @Table(
