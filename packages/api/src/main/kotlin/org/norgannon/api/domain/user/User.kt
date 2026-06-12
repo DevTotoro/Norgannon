@@ -1,7 +1,7 @@
-package org.norgannon.api.domain.user
+package com.github.devtotoro.thevideoclub.api.domain.user
 
 import jakarta.persistence.*
-import org.norgannon.api.domain.common.BaseEntity
+import com.github.devtotoro.thevideoclub.api.domain.common.BaseEntity
 
 @Entity
 @Table(

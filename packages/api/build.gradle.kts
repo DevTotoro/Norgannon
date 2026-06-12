@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.ktlint)
 }
 
-group = "org.norgannon"
+group = "com.github.devtotoro.thevideoclub"
 version = "0.0.1-SNAPSHOT"
 description = "api"
 

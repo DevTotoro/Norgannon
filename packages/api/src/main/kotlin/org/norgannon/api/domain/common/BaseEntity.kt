@@ -1,4 +1,4 @@
-package org.norgannon.api.domain.common
+package com.github.devtotoro.thevideoclub.api.domain.common
 
 import io.hypersistence.tsid.TSID
 import jakarta.persistence.*

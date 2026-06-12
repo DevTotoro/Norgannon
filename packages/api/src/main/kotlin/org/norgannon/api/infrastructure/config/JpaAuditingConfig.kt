@@ -1,4 +1,4 @@
-package org.norgannon.api.infrastructure.config
+package com.github.devtotoro.thevideoclub.api.infrastructure.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
