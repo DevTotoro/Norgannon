@@ -1,4 +1,4 @@
-package org.norgannon.api.support
+package com.github.devtotoro.thevideoclub.api.support
 
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection
@@ -11,8 +11,8 @@ abstract class BaseIntegrationTest {
     companion object {
         @ServiceConnection
         val postgres =
-            PostgreSQLContainer("postgres:18").apply {
-                withDatabaseName("norgannon_test")
+            PostgreSQLContainer("postgres:18-alpine").apply {
+                withDatabaseName("thevideoclub_test")
                 withUsername("test")
                 withPassword("test")
                 withReuse(true)

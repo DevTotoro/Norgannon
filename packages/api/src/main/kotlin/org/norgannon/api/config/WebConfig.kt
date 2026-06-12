@@ -1,6 +1,6 @@
-package org.norgannon.api.config
+package com.github.devtotoro.thevideoclub.api.config
 
-import org.norgannon.api.infrastructure.web.TSIDFormatterFactory
+import com.github.devtotoro.thevideoclub.api.infrastructure.web.TSIDFormatterFactory
 import org.springframework.context.annotation.Configuration
 import org.springframework.format.FormatterRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer

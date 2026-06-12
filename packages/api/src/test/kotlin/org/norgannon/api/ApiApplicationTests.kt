@@ -1,7 +1,7 @@
-package org.norgannon.api
+package com.github.devtotoro.thevideoclub.api
 
+import com.github.devtotoro.thevideoclub.api.support.BaseIntegrationTest
 import org.junit.jupiter.api.Test
-import org.norgannon.api.support.BaseIntegrationTest
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest

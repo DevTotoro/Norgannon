@@ -8,13 +8,13 @@ plugins {
     alias(libs.plugins.ktlint)
 }
 
-group = "org.norgannon"
+group = "com.github.devtotoro.thevideoclub"
 version = "0.0.1-SNAPSHOT"
 description = "api"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 

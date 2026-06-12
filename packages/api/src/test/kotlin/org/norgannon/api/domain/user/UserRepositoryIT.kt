@@ -1,7 +1,7 @@
-package org.norgannon.api.domain.user
+package com.github.devtotoro.thevideoclub.api.domain.user
 
+import com.github.devtotoro.thevideoclub.api.support.BaseIntegrationTest
 import org.junit.jupiter.api.Test
-import org.norgannon.api.support.BaseIntegrationTest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
 import java.util.UUID
@@ -16,7 +16,8 @@ class UserRepositoryIT : BaseIntegrationTest() {
 
     @Test
     fun `should successfully generate a valid 64-bit TSID primary key on save`() {
-        val user = User(email = "primary-key@norgannon.org", externalId = UUID.randomUUID().toString())
+        val user =
+            User(email = "primary-key@thevideoclub.devtotoro.github.com", externalId = UUID.randomUUID().toString())
 
         val savedUser = userRepository.save(user)
 
@@ -26,7 +27,8 @@ class UserRepositoryIT : BaseIntegrationTest() {
 
     @Test
     fun `should verify public id encoding matches expected base32 format and length`() {
-        val user = User(email = "public-id@norgannon.org", externalId = UUID.randomUUID().toString())
+        val user =
+            User(email = "public-id@thevideoclub.devtotoro.github.com", externalId = UUID.randomUUID().toString())
 
         val savedUser = userRepository.save(user)
         val publicId = savedUser.getPublicId()
@@ -45,7 +47,7 @@ class UserRepositoryIT : BaseIntegrationTest() {
 
     @Test
     fun `should automatically populate auditing timestamps upon initial persistence`() {
-        val user = User(email = "auditing@norgannon.org", externalId = UUID.randomUUID().toString())
+        val user = User(email = "auditing@thevideoclub.devtotoro.github.com", externalId = UUID.randomUUID().toString())
 
         val savedUser = userRepository.save(user)
 
@@ -57,7 +59,7 @@ class UserRepositoryIT : BaseIntegrationTest() {
     @Test
     fun `should execute standard database round-trip read and write operations without data loss`() {
         val targetExternalId = UUID.randomUUID().toString()
-        val user = User(email = "round-trip@norgannon.org", externalId = targetExternalId)
+        val user = User(email = "round-trip@thevideoclub.devtotoro.github.com", externalId = targetExternalId)
         val savedUser = userRepository.save(user)
 
         userRepository.flush()
@@ -65,7 +67,7 @@ class UserRepositoryIT : BaseIntegrationTest() {
         val retrievedUser = userRepository.findById(savedUser.id).orElseThrow()
 
         assertEquals(savedUser.id, retrievedUser.id)
-        assertEquals("round-trip@norgannon.org", retrievedUser.email)
+        assertEquals("round-trip@thevideoclub.devtotoro.github.com", retrievedUser.email)
         assertEquals(targetExternalId, retrievedUser.externalId)
     }
 }

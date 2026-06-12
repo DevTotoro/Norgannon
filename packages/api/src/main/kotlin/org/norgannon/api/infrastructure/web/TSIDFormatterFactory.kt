@@ -1,4 +1,4 @@
-package org.norgannon.api.infrastructure.web
+package com.github.devtotoro.thevideoclub.api.infrastructure.web
 
 import io.hypersistence.tsid.TSID
 import org.springframework.format.AnnotationFormatterFactory

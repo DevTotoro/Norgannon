@@ -1,4 +1,4 @@
-package org.norgannon.api
+package com.github.devtotoro.thevideoclub.api
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
