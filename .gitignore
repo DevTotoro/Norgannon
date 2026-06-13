@@ -42,5 +42,5 @@ Thumbs.db
 .nx/workspace-data
 
 # Environment variables
-*.env
+*.env*
 !*.env.example
