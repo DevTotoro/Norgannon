@@ -42,7 +42,16 @@ export default defineConfig(
       }
     },
     rules: {
-      '@typescript-eslint/no-unsafe-call': 'off'
+      '@typescript-eslint/no-unsafe-call': 'off',
+      'svelte/no-navigation-without-resolve': [
+        'error',
+        {
+          ignoreGoto: false,
+          ignoreLinks: true,
+          ignorePushState: false,
+          ignoreReplaceState: false
+        }
+      ]
     }
   },
   {
