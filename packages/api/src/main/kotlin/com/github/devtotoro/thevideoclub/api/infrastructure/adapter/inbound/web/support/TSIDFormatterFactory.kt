@@ -1,6 +1,6 @@
-package com.github.devtotoro.thevideoclub.api.infrastructure.web
+package com.github.devtotoro.thevideoclub.api.infrastructure.adapter.inbound.web.support
 
-import io.hypersistence.tsid.TSID
+import com.github.devtotoro.thevideoclub.api.domain.common.TSIDCodec
 import org.springframework.format.AnnotationFormatterFactory
 import org.springframework.format.Parser
 import org.springframework.format.Printer
@@ -11,14 +11,10 @@ class TSIDFormatterFactory : AnnotationFormatterFactory<TSIDParam> {
     override fun getPrinter(
         annotation: TSIDParam,
         fieldType: Class<*>,
-    ): Printer<Long> = Printer { objectValue, _ -> TSID.from(objectValue).toString() }
+    ): Printer<Long> = Printer { objectValue, _ -> TSIDCodec.encode(objectValue) }
 
     override fun getParser(
         annotation: TSIDParam,
         fieldType: Class<*>,
-    ): Parser<Long> =
-        Parser { text, _ ->
-            if (text.isBlank()) throw IllegalArgumentException("TSID parameter cannot be blank")
-            TSID.from(text).toLong()
-        }
+    ): Parser<Long> = Parser { text, _ -> TSIDCodec.decode(text) }
 }

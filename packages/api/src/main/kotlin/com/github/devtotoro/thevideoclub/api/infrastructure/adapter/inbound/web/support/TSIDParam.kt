@@ -1,4 +1,4 @@
-package com.github.devtotoro.thevideoclub.api.infrastructure.web
+package com.github.devtotoro.thevideoclub.api.infrastructure.adapter.inbound.web.support
 
 @Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.RUNTIME)

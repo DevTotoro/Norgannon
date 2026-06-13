@@ -32,7 +32,7 @@ abstract class BaseEntity {
         }
     }
 
-    fun getPublicId(): String = TSID.from(id).toString()
+    fun getPublicId(): String = TSIDCodec.encode(id)
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
