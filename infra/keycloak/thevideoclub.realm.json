@@ -36,17 +36,6 @@
 
   "clients": [
     {
-      "clientId": "thevideoclub-api",
-      "name": "The Video Club - API",
-      "enabled": true,
-      "secret": "thevideoclub",
-      "webOrigins": ["+"],
-      "standardFlowEnabled": true,
-      "serviceAccountsEnabled": true,
-      "protocol": "openid-connect",
-      "defaultClientScopes": ["service_account", "web-origins", "acr", "profile", "roles", "basic", "email"]
-    },
-    {
       "clientId": "thevideoclub-local",
       "name": "The Video Club - Local",
       "enabled": true,
@@ -54,6 +43,21 @@
       "publicClient": true,
       "directAccessGrantsEnabled": true,
       "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "profile", "roles", "basic", "email"]
+    },
+    {
+      "clientId": "thevideoclub-web",
+      "name": "The Video Club - Web",
+      "enabled": true,
+      "secret": "__KEYCLOAK_WEB_CLIENT_SECRET__",
+      "standardFlowEnabled": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["__WEB_APP_URL__/auth/callback/keycloak"],
+      "postLogoutRedirectUris": ["__WEB_APP_URL__/"],
+      "webOrigins": ["__WEB_APP_URL__"],
+      "attributes": {
+        "post.logout.redirect.uris": "__WEB_APP_URL__/"
+      },
       "defaultClientScopes": ["web-origins", "acr", "profile", "roles", "basic", "email"]
     }
   ],
