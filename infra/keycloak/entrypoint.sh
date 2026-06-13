@@ -5,6 +5,7 @@ set -euo pipefail
 : "${DEV_USER_EMAIL:?DEV_USER_EMAIL must be set}"
 : "${DEV_USER_PASSWORD:?DEV_USER_PASSWORD must be set}"
 : "${WEB_APP_URL:?WEB_APP_URL must be set}"
+: "${KEYCLOAK_WEB_CLIENT_ID:?KEYCLOAK_WEB_CLIENT_ID must be set}"
 : "${KEYCLOAK_WEB_CLIENT_SECRET:?KEYCLOAK_WEB_CLIENT_SECRET must be set}"
 
 TEMPLATE_FILE="/opt/keycloak/data/import-template/thevideoclub.realm.json"
@@ -26,12 +27,14 @@ escaped_realm=$(escape_for_sed "$KEYCLOAK_REALM_NAME")
 escaped_email=$(escape_for_sed "$DEV_USER_EMAIL")
 escaped_password=$(escape_for_sed "$DEV_USER_PASSWORD")
 escaped_web_app_url=$(escape_for_sed "$WEB_APP_URL")
+escaped_web_client_id=$(escape_for_sed "$KEYCLOAK_WEB_CLIENT_ID")
 escaped_web_client_secret=$(escape_for_sed "$KEYCLOAK_WEB_CLIENT_SECRET")
 
 sed -e "s|__KEYCLOAK_REALM_NAME__|$escaped_realm|g" \
     -e "s|__DEV_USER_EMAIL__|$escaped_email|g" \
     -e "s|__DEV_USER_PASSWORD__|$escaped_password|g" \
     -e "s|__WEB_APP_URL__|$escaped_web_app_url|g" \
+    -e "s|__KEYCLOAK_WEB_CLIENT_ID__|$escaped_web_client_id|g" \
     -e "s|__KEYCLOAK_WEB_CLIENT_SECRET__|$escaped_web_client_secret|g" \
     "$TEMPLATE_FILE" > "$OUTPUT_FILE"
 

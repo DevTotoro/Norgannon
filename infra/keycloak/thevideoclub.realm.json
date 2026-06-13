@@ -46,7 +46,7 @@
       "defaultClientScopes": ["web-origins", "acr", "profile", "roles", "basic", "email"]
     },
     {
-      "clientId": "thevideoclub-web",
+      "clientId": "__KEYCLOAK_WEB_CLIENT_ID__",
       "name": "The Video Club - Web",
       "enabled": true,
       "secret": "__KEYCLOAK_WEB_CLIENT_SECRET__",
