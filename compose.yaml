@@ -33,7 +33,7 @@ services:
     ports:
       - '${KEYCLOAK_HTTP_PORT}:${KEYCLOAK_HTTP_PORT}'
     volumes:
-      - ./infra/keycloak/thevideoclub.realm.json.tpl:/opt/keycloak/data/import/thevideoclub.realm.json.tpl:ro
+      - ./infra/keycloak/thevideoclub.realm.json.tpl:/opt/keycloak/data/import-template/thevideoclub.realm.json.tpl:ro
       - ./infra/keycloak/entrypoint.sh:/opt/keycloak/entrypoint.sh:ro
     depends_on:
       - postgres
