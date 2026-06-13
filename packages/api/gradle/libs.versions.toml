@@ -36,6 +36,7 @@ tsid-creator = { module = "io.hypersistence:hypersistence-tsid", version.ref = "
 
 # Testing
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-starter-webmvc-test =  { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
 spring-security-test = { module  = "org.springframework.security:spring-security-test" }
 kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
