@@ -1,5 +1,5 @@
 {
-  "realm": "thevideoclub",
+  "realm": "__KEYCLOAK_REALM_NAME__",
   "displayName": "The Video Club",
   "enabled": true,
   "sslRequired": "external",
