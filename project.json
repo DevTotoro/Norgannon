@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "name": "root",
+  "targets": {
+    "start-infra": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker compose up -d"
+      }
+    },
+    "stop-infra": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker compose down"
+      }
+    }
+  }
+}

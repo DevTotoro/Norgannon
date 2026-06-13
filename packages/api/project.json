@@ -1,8 +1,18 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "api",
   "root": "packages/api",
   "projectType": "application",
   "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": [{ "projects": "root", "target": "start-infra" }],
+      "options": {
+        "command": "./gradlew bootRun",
+        "cwd": "packages/api",
+        "envFile": ".env"
+      }
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
