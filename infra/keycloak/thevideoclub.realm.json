@@ -3,7 +3,6 @@
   "displayName": "The Video Club",
   "enabled": true,
   "sslRequired": "external",
-
   "registrationAllowed": true,
   "registrationEmailAsUsername": true,
   "loginWithEmailAllowed": true,
@@ -16,19 +15,46 @@
     ]
   },
 
+  "users": [
+    {
+      "username": "__DEV_USER_EMAIL__",
+      "email": "__DEV_USER_EMAIL__",
+      "emailVerified": true,
+      "firstName": "Dev",
+      "lastName": "User",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "__DEV_USER_PASSWORD__",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["user"]
+    }
+  ],
+
   "clients": [
     {
       "clientId": "thevideoclub-api",
       "name": "The Video Club - API",
       "enabled": true,
       "secret": "thevideoclub",
-      "redirectUris": ["http://localhost:8080"],
       "webOrigins": ["+"],
-      "notBefore": 0,
       "standardFlowEnabled": true,
       "serviceAccountsEnabled": true,
       "protocol": "openid-connect",
       "defaultClientScopes": ["service_account", "web-origins", "acr", "profile", "roles", "basic", "email"]
+    },
+    {
+      "clientId": "thevideoclub-local",
+      "name": "The Video Club - Local",
+      "enabled": true,
+      "webOrigins": ["+"],
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "profile", "roles", "basic", "email"]
     }
   ],
 

@@ -30,10 +30,12 @@ services:
       KC_HTTP_PORT: ${KEYCLOAK_HTTP_PORT}
 
       KEYCLOAK_REALM_NAME: ${KEYCLOAK_REALM_NAME}
+      DEV_USER_EMAIL: ${DEV_USER_EMAIL}
+      DEV_USER_PASSWORD: ${DEV_USER_PASSWORD}
     ports:
       - '${KEYCLOAK_HTTP_PORT}:${KEYCLOAK_HTTP_PORT}'
     volumes:
-      - ./infra/keycloak/thevideoclub.realm.json.tpl:/opt/keycloak/data/import-template/thevideoclub.realm.json.tpl:ro
+      - ./infra/keycloak/thevideoclub.realm.json:/opt/keycloak/data/import-template/thevideoclub.realm.json:ro
       - ./infra/keycloak/entrypoint.sh:/opt/keycloak/entrypoint.sh:ro
     depends_on:
       - postgres
