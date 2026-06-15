@@ -28,9 +28,6 @@ dependencies {
     implementation(libs.spring.boot.starter.flyway)
     implementation(libs.spring.boot.starter.web)
 
-    // Security & Identity
-    implementation(libs.spring.boot.starter.oauth2.resource.server)
-
     // Database Core Adapters
     implementation(libs.flyway.database.postgresql)
     runtimeOnly(libs.postgresql)
@@ -46,8 +43,6 @@ dependencies {
 
     // Engineering Test Harnesses
     testImplementation(libs.spring.boot.starter.test)
-    testImplementation(libs.spring.boot.starter.webmvc.test)
-    testImplementation(libs.spring.security.test)
     testImplementation(libs.kotlin.test.junit5)
     testRuntimeOnly(libs.junit.platform.launcher)
 
